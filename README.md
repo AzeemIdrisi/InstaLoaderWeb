@@ -1,7 +1,7 @@
 
 <div align="center">
     <img           src="https://cdn-icons-png.flaticon.com/512/717/717392.png"
- width="128" height="128" style="display: block; margin: 0 auto"/>
+ width="80" height="80" style="display: block; margin: 0 auto"/>
     <h1>InstaLoaderWeb</h1>
     <h3>Instagram Posts Downloader built with Django based on instaloader</h3>
 </div>
@@ -62,4 +62,4 @@ If you like my work you can support me via :
 
 <hr/>
 <br/>
-InstaLoaderApp &copy Azeem Idrisi 2024
+InstaLoaderWeb &copy Azeem Idrisi 2024
