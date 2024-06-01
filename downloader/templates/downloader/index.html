@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="widsth=device-width, initial-scale=1.0" />
+    <title>InstaLoaderWeb</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href={% static "downloader/styles.css" %}>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/717/717392.png"
+          class="logo"
+        />
+        <span>InstaLoaderWeb </span>
+      </div>
+    </header>
+    <section class="user-input">
+      <form action={% url "homepage" %} method="POST">
+        {% csrf_token %}
+        <label for="postURL">Enter Instagram Post URL</label>
+        <input
+          type="text"
+          name="postURL"
+          id="postURL"
+          placeholder="https://www.instagram.com/"
+          autocomplete="off"
+        />
+
+        <button type="submit">Download</button>
+        {{error}}
+      </form>
+    </section>
+    <footer>
+      Made with &#10084;&#65039; in &#127470;&#127475; · InstaLoaderWeb &copy
+      <span><a href="https://github.com/AzeemIdrisi">AzeemIdrisi</a></span>
+      {{year}}
+    </footer>
+  </body>
+</html>
