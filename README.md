@@ -8,12 +8,10 @@
 
 A web app to preview and download all pictures, videos and reels from an Instagram Post based on [instaloader](https://github.com/instaloader/instaloader).
 
-## Screenshots
+## Screenshot
 <div align="center">
-  
-<img src=https://github.com/AzeemIdrisi/InstaLoaderWeb/assets/112647789/077034e8-7f73-4d54-a2f4-992f37d3ac26/>
-  
-<img src=https://github.com/AzeemIdrisi/InstaLoaderWeb/assets/112647789/2e3b60df-93f2-4275-a2f6-8de7bcb2306b/>
+
+<img src=https://github.com/AzeemIdrisi/InstaLoaderWeb/assets/112647789/2cf70485-c61e-4668-90f8-515fa124c769 />
 
 
 </div>
