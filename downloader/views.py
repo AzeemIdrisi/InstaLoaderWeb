@@ -41,4 +41,23 @@ def homepage(request):
                     "downloader/index.html",
                     {"error": "Something's Wrong."},
                 )
+
+    if os.path.exists("temp"):
+        media_files = os.listdir("temp")
+        images = [
+            f
+            for f in media_files
+            if f.lower().endswith((".png", ".jpg", ".jpeg", ".gif"))
+        ]
+        videos = [
+            f
+            for f in media_files
+            if f.lower().endswith((".mp4", ".avi", ".mov", ".wmv"))
+        ]
+        return render(
+            request,
+            "downloader/index.html",
+            {"data": True, "images": images, "videos": videos},
+        )
+
     return render(request, "downloader/index.html")
