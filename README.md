@@ -22,6 +22,36 @@ A web app to preview and download all pictures, videos and reels from an Instagr
 
 ## How to use
 
+### Installation
+
+1. **Clone the Repository:**
+
+   ```
+   git clone https://github.com/AzeemIdrisi/InstaLoaderWeb
+   ```
+
+2. **Navigate to the Project Directory:**
+
+   ```
+   cd InstaLoaderWeb
+   ```
+
+
+4. **Install dependencies:**
+
+   ```
+   pip install -r requirements.txt
+   ```
+4. **Run the Django Server:**
+
+   ```
+   python manage.py runserver
+   ```
+
+5. **Access the System:**
+
+   Open your web browser and go to `http://localhost:8000` to use the system.
+
 ### Downloading Single Post
 * Select `Copy Link` from the share button of any public Instagram Account's post/reel.
 * Enter the copied `URL` in the web app.
