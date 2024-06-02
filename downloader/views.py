@@ -34,12 +34,12 @@ def homepage(request):
                 print("CLEANED")
 
                 L.download_post(post, target="temp")
-            except:
-
+            except Exception as e:
+                error_message = str(e)
                 return render(
                     request,
                     "downloader/index.html",
-                    {"error": "Something's Wrong."},
+                    {"error": f"An error occurred: {error_message}"},
                 )
 
     if os.path.exists("temp"):

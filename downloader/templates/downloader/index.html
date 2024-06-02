@@ -12,6 +12,11 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{% static 'downloader/styles.css' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn-icons-png.flaticon.com/512/4208/4208397.png"
+    />
   </head>
   <body>
     <header>
@@ -32,10 +37,10 @@
           name="postURL"
           id="postURL"
           placeholder="https://www.instagram.com/"
-          autocomplete="off"
         />
         <button type="submit" id="download">Download</button>
         <span class="loader" style="display: none"></span>
+        <h3>{{error}}</h3>
       </form>
     </section>
     {% if data %}
@@ -67,7 +72,7 @@
     </div>
     {% endif %}
     <footer>
-      Made with &#10084;&#65039; in &#127470;&#127475; · InstaLoaderWeb &copy;
+      Made with &#10084;&#65039; in &#127470;&#127475; • InstaLoaderWeb &copy;
       <span><a href="https://github.com/AzeemIdrisi">AzeemIdrisi</a></span>
       {{ year }}
     </footer>
