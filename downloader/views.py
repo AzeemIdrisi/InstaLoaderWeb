@@ -10,7 +10,7 @@ def homepage(request):
         url = str(request.POST["postURL"])
         if url != "":
             if url.startswith("https://www.instagram.com/"):
-                shortcode = url.split("/")[4]
+                shortcode = url.split("/")[5]
                 print(f"{shortcode=}")
             else:
                 return render(
