@@ -29,35 +29,25 @@
       </div>
     </header>
     <section class="user-input">
-      <div class="menu">
-        <label for="postURL">Select an option</label>
-        <div>
-          <a href="/posts">
-            <img src={% static 'downloader/post.png' %} height="80px"/>
-            <h2>Posts</h2>
-            <p>Download Photos/Videos from a post link.</p>
-          </a>
-          <a href="/reels">
-            <img src={% static 'downloader/reel.png' %} height="80px"/>
-
-            <h2>Reels</h2>
-            <p>Download a Reel from it's link.</p>
-          </a>
-
-          <a href="/allposts">
-            <img src={% static 'downloader/grid.png' %} height="80px"/>
-
-            <h2>All Media</h2>
-            <p>Download all Photos/Videos/Reels of an Instagram Account.</p>
-          </a>
-        </div>
-      </div>
+      <form action="{% url 'allposts' %}" method="POST">
+        {% csrf_token %}
+        <label for="postURL">Enter Instagram User's Username</label>
+        <input type="text" name="postURL" id="postURL" placeholder="Username" />
+        <button type="submit" id="download">Download</button>
+        <span class="loader" style="display: none"></span>
+        <h3>{{error}}</h3>
+        <h3 style="text-align: center">{{message}}</h3>
+        {% if message %}
+        <h3 style="text-align: center">
+          You can find all the downloaded posts at "C://InstaLoaderWeb/"
+        </h3>
+        {% endif %}
+      </form>
     </section>
-
     <footer>
       Made with &#10084;&#65039; in &#127470;&#127475; • InstaLoaderWeb &copy;
       <span><a href="https://github.com/AzeemIdrisi">AzeemIdrisi</a></span>
-      {{ year }}
+      2024
     </footer>
     <script>
       document

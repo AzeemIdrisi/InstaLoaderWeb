@@ -73,6 +73,56 @@ footer {
   /* gap: 15px; */
   width: 50%;
 }
+.user-input > div {
+  font-weight: bold;
+  /* margin: 2rem auto; */
+  background: rgb(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: 15px; */
+  width: 90%;
+}
+.user-input > div > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2rem;
+}
+.user-input > div > div a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
+  /* margin: 2rem auto; */
+  background: rgb(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  /* gap: 15px; */
+  transition: all 300ms;
+  width: 20rem;
+  height: 12rem;
+}
+.user-input > div > div a:hover {
+  cursor: pointer;
+  background: rgb(255, 255, 255, 1);
+}
+
+.user-input > div > div > a h2,
+.user-input > div > div > a p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
 label {
   font-size: 20px;
   color: #333;
@@ -201,4 +251,10 @@ button:hover {
   50% {
     transform: scale(1) translate(-50%, -50%);
   }
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
 }

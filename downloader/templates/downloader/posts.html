@@ -29,31 +29,48 @@
       </div>
     </header>
     <section class="user-input">
-      <div class="menu">
-        <label for="postURL">Select an option</label>
-        <div>
-          <a href="/posts">
-            <img src={% static 'downloader/post.png' %} height="80px"/>
-            <h2>Posts</h2>
-            <p>Download Photos/Videos from a post link.</p>
-          </a>
-          <a href="/reels">
-            <img src={% static 'downloader/reel.png' %} height="80px"/>
-
-            <h2>Reels</h2>
-            <p>Download a Reel from it's link.</p>
-          </a>
-
-          <a href="/allposts">
-            <img src={% static 'downloader/grid.png' %} height="80px"/>
-
-            <h2>All Media</h2>
-            <p>Download all Photos/Videos/Reels of an Instagram Account.</p>
-          </a>
-        </div>
-      </div>
+      <form action="{% url 'posts' %}" method="POST">
+        {% csrf_token %}
+        <label for="postURL">Enter Instagram Post URL</label>
+        <input
+          type="text"
+          name="postURL"
+          id="postURL"
+          placeholder="https://www.instagram.com/"
+        />
+        <button type="submit" id="download">Download</button>
+        <span class="loader" style="display: none"></span>
+        <h3>{{error}}</h3>
+      </form>
     </section>
-
+    {% if data %}
+    <div class="container">
+      <div class="media-cards">
+        {% for image in images %}
+        <div class="card">
+          <img src="{{ MEDIA_URL }}temp/{{ image }}" alt="{{ image }}" />
+          <div class="card-actions">
+            <a href="{{ MEDIA_URL }}temp/{{ image }}" download="{{ image }}"
+              >Download</a
+            >
+          </div>
+        </div>
+        {% endfor %} {% for video in videos %}
+        <div class="card">
+          <video controls>
+            <source src="{{ MEDIA_URL }}temp/{{ video }}" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div class="card-actions">
+            <a href="{{ MEDIA_URL }}temp/{{ video }}" download="{{ video }}"
+              >Download</a
+            >
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
     <footer>
       Made with &#10084;&#65039; in &#127470;&#127475; • InstaLoaderWeb &copy;
       <span><a href="https://github.com/AzeemIdrisi">AzeemIdrisi</a></span>
